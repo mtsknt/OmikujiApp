@@ -2,6 +2,7 @@ package com.example.omikujiapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -23,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeTextView(View view) {
         int n = ThreadLocalRandom.current().nextInt(0, 5);
+        if (n == 4){
+            text.setTextColor(Color.RED);
+        } else {
+            text.setTextColor(Color.parseColor("#999999"));
+        }
         text.setText(fortune[n]);
     }
 }
